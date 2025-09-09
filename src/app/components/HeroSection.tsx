@@ -16,6 +16,8 @@ const HeroSection = () => {
           <span className="bg-gradient-to-r from-red-950 to-red-800 text-transparent bg-clip-text font-semibold">Editing, Motion Graphics</span>, & Lainnya di Bidang Media. Kami dapat menjadi
           <span className="bg-gradient-to-r from-red-300 to-red-800 text-transparent bg-clip-text font-semibold"> Third-Party Partner</span> Anda untuk Kebutuhan Multimedia.
         </p>
+        <h1>Creative Responsibility for a Class Visual</h1>
+        <h1>Creative Studio | Motion Graphic | Post Production | Graphic Design</h1>
       </div>
 
       {/* Bagian Kanan: Gambar dengan animasi float */}
@@ -32,5 +34,6 @@ const HeroSection = () => {
     </div>
   );
 };
+
 
 export default HeroSection;
