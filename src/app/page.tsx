@@ -50,7 +50,7 @@ export default async function Home() {
   ]);
 function getGraphicDesignImages() {
   try {
-    const dir = path.join(process.cwd(), 'public', 'graph design');
+    const dir = path.join(process.cwd(), 'public', 'graphdesign');
     const filenames = fs.readdirSync(dir);
     return filenames.filter((file: string) => /\.(jpg|jpeg|png|webp|gif)$/i.test(file));
   } catch {
