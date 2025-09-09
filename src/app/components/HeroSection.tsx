@@ -12,7 +12,7 @@ const HeroSection = () => {
         <h1 className="font-heading  from-red-950 to-red-900 hover:scale-101 duration-150 text-5xl md:text-7xl font-extrabold leading-tight bg-gradient-to-r  text-transparent bg-clip-text">
           Pasifixc.
         </h1>
-        <p className="font-body text-xl text-gray-700 max-w-md">a
+        <p className="font-body text-xl text-gray-700 max-w-md">
           <span className="bg-gradient-to-r from-red-950 to-red-800 text-transparent bg-clip-text font-semibold">Editing, Motion Graphics</span>, & Lainnya di Bidang Media. Kami dapat menjadi
           <span className="bg-gradient-to-r from-red-300 to-red-800 text-transparent bg-clip-text font-semibold"> Third-Party Partner</span> Anda untuk Kebutuhan Multimedia.
         <div className='mt-4 space-y-1'>
@@ -41,3 +41,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
