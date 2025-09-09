@@ -11,8 +11,7 @@ const ContactSection = () => {
   return (
     <section 
       id="contact" 
-      className="relative mt-3 w-full h-screen snap-start flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-red-50/50"
-    >
+className="relative w-full snap-start flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-red-50/50 py-24 sm:py-32"    >
         <div className="absolute top-1/2 -left-1/4  bg-red-200/50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
         <div className="absolute top-1/2 -right-1/4  bg-red-200/50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-2000"></div>
 
@@ -45,7 +44,7 @@ const ContactSection = () => {
                 <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                     {/* Tombol Discord (Gaya Outline) */}
                     <a 
-                      href="https://discord.gg/HSxx7fxs" 
+                      href="https://discord.com/users/1142802821113200730" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="group flex items-center justify-center gap-3 w-full px-6 py-3 border-2 border-red-700 text-red-700 font-semibold rounded-lg shadow-sm hover:bg-red-700 hover:text-white transition-all transform hover:scale-105"
