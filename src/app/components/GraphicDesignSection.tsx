@@ -52,7 +52,7 @@ const GraphicDesignSection = ({ images }: GraphicDesignSectionProps) => {
                 {images.map((imageFile) => (
                   <div key={imageFile} className="relative flex-[0_0_80%] sm:flex-[0_0_60%] md:flex-[0_0_50%] min-w-0 pl-4">
                     <Link
-                      href={`/graph design/${imageFile}`}
+                      href={`/graphdesign/${imageFile}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group block relative w-full aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-all duration-300"
@@ -85,6 +85,5 @@ const GraphicDesignSection = ({ images }: GraphicDesignSectionProps) => {
     </section>
   );
 };
-
 
 export default GraphicDesignSection;
