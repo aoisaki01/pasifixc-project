@@ -58,7 +58,7 @@ const GraphicDesignSection = ({ images }: GraphicDesignSectionProps) => {
                       className="group block relative w-full aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-all duration-300"
                     >
                       <Image
-                        src={`/graph design/${imageFile}`}
+                        src={`/graphdesign/${imageFile}`}
                         alt={imageFile.split('.')[0]} // Menggunakan nama file sebagai alt text
                         fill
                         className="object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
@@ -85,5 +85,6 @@ const GraphicDesignSection = ({ images }: GraphicDesignSectionProps) => {
     </section>
   );
 };
+
 
 export default GraphicDesignSection;
