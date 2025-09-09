@@ -1,75 +1,38 @@
-// File: src/app/page.tsx
+// File: src/components/HeroSection.tsx
 
-import HeroSection from './components/HeroSection';
-import PortfolioSection from './components/PortfolioSection';
-import ServicesPage from './components/ServiceSection';
-import GraphicDesignSection from './components/GraphicDesignSection';
-import fs from 'fs';
-import path from 'path';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
-// --- Fungsi Pengambilan Data (Tetap di sini, di Server Component) ---
-async function fetchPlaylist(playlistId: string) {
-  const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
-  const API_URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=50&key=${YOUTUBE_API_KEY}`;
-  try {
-    const res = await fetch(API_URL, { next: { revalidate: 3600 } });
-    const data = await res.json();
-    if (data.error || !data.items) {
-      console.error(`YouTube API Error for playlist ${playlistId}:`, data);
-      return [];
-    }
-    return data.items.map((item: {
-      snippet: {
-        resourceId: { videoId: string };
-        title: string;
-        thumbnails: {
-          maxres?: { url: string };
-          high?: { url: string };
-          default?: { url: string };
-        };
-      };
-    }) => ({
-      id: item.snippet.resourceId.videoId,
-      title: item.snippet.title,
-      thumbnailUrl: item.snippet.thumbnails.maxres?.url || item.snippet.thumbnails.high?.url || item.snippet.thumbnails.default?.url,
-      videoUrl: `https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`
-    }));
-  } catch (error) {
-    console.error(`Failed to fetch YouTube playlist ${playlistId}:`, error);
-    return [];
-  }
-}
+import Image from 'next/image';
 
-// --- Komponen Halaman Utama ---
-export default async function Home() {
-  // Ambil data di Server Component
-  const [editingMographVideos, commissionVideos] = await Promise.all([
-    fetchPlaylist('PLRsqjORXwAcKIr5OLDl6ttrfQyxsyZM4c'),
-    fetchPlaylist('PLxholx9QaiMQs30FSPlIB014uL8cYrDUI')
-  ]);
-function getGraphicDesignImages() {
-  try {
-    const dir = path.join(process.cwd(), 'public', 'graphdesign');
-    const filenames = fs.readdirSync(dir);
-    return filenames.filter((file: string) => /\.(jpg|jpeg|png|webp|gif)$/i.test(file));
-  } catch {
-    console.warn("Could not read the graph design directory. It might not exist yet.");
-    return [];
-  }
-}
-const graphicImages = getGraphicDesignImages();
+const HeroSection = () => {
   return (
-    
-    <>
-    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
-      <HeroSection />
-    </main>
-      <ServicesPage />
-      <PortfolioSection editingMographVideos={editingMographVideos} commissionVideos={commissionVideos} />
-   <GraphicDesignSection images={graphicImages} /> {/* <-- Tambahkan komponen & teruskan data gambar */}
-    <ContactSection /> 
-    <Footer />
-    </>
+    // Kita hapus elemen "blobs" dari dalam div ini
+    <div className="relative z-10 flex w-full max-w-6xl items-center justify-between gap-12 flex-col md:flex-row">
+      
+      {/* Bagian Kiri: Teks Layanan */}
+      <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-5 md:w-1/2">
+        <h1 className="font-heading  from-red-950 to-red-900 hover:scale-101 duration-150 text-5xl md:text-7xl font-extrabold leading-tight bg-gradient-to-r  text-transparent bg-clip-text">
+          Pasifixc
+        </h1>
+        <p className="font-body text-xl text-gray-700 max-w-md">
+          <span className="bg-gradient-to-r from-red-950 to-red-800 text-transparent bg-clip-text font-semibold">Editing, Motion Graphics</span>, & Lainnya di Bidang Media. Kami dapat menjadi
+          <span className="bg-gradient-to-r from-red-300 to-red-800 text-transparent bg-clip-text font-semibold"> Third-Party Partner</span> Anda untuk Kebutuhan Multimedia.
+        </p>
+        <h1>Creative Responsibility for a Class Visual</h1>
+        <h1>Creative Studio | Motion Graphic | Post Production | Graphic Design</h1>
+      </div>
+
+      {/* Bagian Kanan: Gambar dengan animasi float */}
+      <div className="md:w-1/2 flex justify-center md:justify-end">
+        <Image
+          src="/psfx.png"
+          alt="Pasifixc Corporation Logo"
+          width={400}
+          height={200}
+          priority
+          className="rounded-lg  shadow-2xl animate-float"
+        />
+      </div>
+    </div>
   );
-}
+};
+
+export default HeroSection;
