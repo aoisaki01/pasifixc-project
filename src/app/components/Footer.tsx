@@ -15,7 +15,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'Instagram', href: 'https://www.instagram.com/pasifixc.coor', icon: Instagram },
+    { name: 'Instagram', href: 'https://www.instagram.com/pasifixcproject/', icon: Instagram },
     { name: 'YouTube', href: 'https://www.youtube.com/@ixta2897', icon: Youtube },
    
   ];
@@ -76,3 +76,4 @@ const Footer = () => {
 
 
 export default Footer;
+
