@@ -15,20 +15,7 @@ const ValueCard = ({ icon, title, children }: { icon: React.ReactNode, title: st
 );
 
 // --- Komponen untuk Kartu Tim (Team Card) ---
-const TeamCard = ({ imgSrc, name, role }: { imgSrc: string, name: string, role: string }) => (
-  <div className="text-center">
-    <div className="relative w-40 h-40 mx-auto mb-4">
-      <Image
-        src={imgSrc}
-        alt={`Foto ${name}`}
-        fill
-        className="object-cover rounded-full shadow-lg"
-      />
-    </div>
-    <h3 className="text-xl font-bold text-gray-800">{name}</h3>
-    <p className="text-gray-500">{role}</p>
-  </div>
-);
+
 
 export default function AboutPage() {
   return (
@@ -78,7 +65,7 @@ export default function AboutPage() {
           <div className="w-full max-w-6xl mx-auto px-6 md:px-12">
             <div className="text-center mb-16">
                 <h2 className="font-heading text-4xl font-bold text-gray-800">Nilai-Nilai Kami</h2>
-                <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Empat pilar yang menjadi fondasi setiap karya yang kami hasilkan.</p>
+                <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Pilar yang menjadi fondasi setiap karya yang kami hasilkan.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <ValueCard icon={<Lightbulb size={40} className="text-red-500" />} title="Kreativitas">
@@ -90,22 +77,6 @@ export default function AboutPage() {
                 <ValueCard icon={<Handshake size={40} className="text-red-500" />} title="Kemitraan">
                     Kami memposisikan diri sebagai bagian dari tim Anda, bekerja sama secara transparan untuk mencapai tujuan bersama.
                 </ValueCard>
-            </div>
-          </div>
-      </section>
-
-      {/* --- Section 4: Tim Kami --- */}
-      <section className="py-24">
-          <div className="w-full max-w-6xl mx-auto px-6 md:px-12">
-            <div className="text-center mb-16">
-                <h2 className="font-heading text-4xl font-bold text-gray-800">Tim Kami</h2>
-                <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Bertemu dengan para profesional di balik layar.</p>
-            </div>
-            {/* Ganti dengan data tim Anda */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-                <TeamCard imgSrc="/images/red.jpg" name="Nama Anda" role="Founder & Creative Director" />
-                <TeamCard imgSrc="/images/red.jpg" name="Nama Anggota Tim" role="Lead Video Editor" />
-                <TeamCard imgSrc="/images/red.jpg" name="Nama Anggota Tim" role="Web Developer" />
             </div>
           </div>
       </section>

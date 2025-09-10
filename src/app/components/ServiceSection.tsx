@@ -17,7 +17,7 @@ export default function ServicesPage() {
         
         {/* --- BAGIAN 1: LAYANAN KAMI (PENGENALAN) --- */}
         <div className="text-center">
-          <h2 className="font-heading text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-red-800 to-red-500 text-transparent bg-clip-text">
+          <h2 className="font-heading py-6 text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-red-800 to-red-500 text-transparent bg-clip-text">
             Layanan Profesional Kami
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">

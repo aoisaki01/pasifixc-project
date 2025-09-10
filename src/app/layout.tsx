@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { Inter, Lexend } from 'next/font/google';
 import Navbar from './components/Navbar';
 import VideoBackground from './components/VideoBackground'; // <-- Impor komponen video
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${lexend.variable}`}>
       <body>
+         <LanguageSwitcher />
         <VideoBackground /> {/* <-- TAMBAHKAN DI SINI */}
         <Navbar />
         {children}
