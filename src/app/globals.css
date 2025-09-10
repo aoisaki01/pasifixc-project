@@ -15,7 +15,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #ffffff;
   }
 }
 
@@ -23,4 +23,85 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animasi untuk gambar agar 'mengambang' */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Style untuk background grid pattern */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+body > .skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important; /* Mencegah halaman turun saat banner disembunyikan */
+}
+
+/* Mengatur style dropdown utama */
+#google_translate_element select {
+  background-color: transparent;
+  border: none;
+  color: #374151; /* Warna teks (gray-700) */
+  font-weight: 500;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+/* Menghilangkan logo Google dari dropdown */
+#google_translate_element .goog-te-gadget-icon {
+  display: none !important;
+}
+
+/* Menghilangkan tulisan "Powered by" */
+.goog-te-gadget-simple .goog-te-menu-value span {
+  border-left: none !important;
+  padding: 0 4px;
+}
+body > .skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important; 
+}
+
+/* Sembunyikan dropdown asli Google sepenuhnya */
+#google_translate_element, .goog-te-gadget-simple {
+  display: none !important;
 }
