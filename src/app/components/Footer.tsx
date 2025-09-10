@@ -9,7 +9,7 @@ import { Instagram, Youtube } from 'lucide-react';
 const Footer = () => {
   const navLinks = [
     { name: 'FAQ', href: '/faq' },
-    { name: 'Email', href: '/#services' },
+    { name: 'Email', href: 'mailto:pasifixcproject@gmail.com' },
     { name: 'Terms', href: '/terms' },
     { name: 'About', href: '/about' },
   ];
@@ -73,5 +73,6 @@ const Footer = () => {
     </footer>
   );
 };
+
 
 export default Footer;
