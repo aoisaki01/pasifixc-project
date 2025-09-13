@@ -61,18 +61,24 @@ const ContactSection = () => {
                   Siap untuk memulai proyek Anda? Hubungi kami melalui platform pilihan Anda di bawah ini.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-                  <button 
+                    <button 
                     onClick={() => openModal('https://discord.com/users/1142802821113200730')} 
                     className="group flex items-center justify-center gap-3 w-full px-6 py-3 border-2 border-red-700 text-red-700 font-semibold rounded-lg shadow-sm hover:bg-red-700 hover:text-white transition-all transform hover:scale-105"
-                  >
+                    >
                     Discord
-                  </button>
-                  <button 
+                    </button>
+                    <button 
                     onClick={() => openModal('https://wa.me/6282184774837')} 
                     className="flex items-center justify-center gap-3 w-full px-6 py-3 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:shadow-red-500/50 transition-all transform hover:scale-105"
-                  >
+                    >
                     WhatsApp
-                  </button>
+                    </button>
+                    <button
+                    onClick={() => openModal('mailto:pasifixcproject@gmail.com')}
+                    className="flex items-center justify-center gap-3 w-full px-6 py-3 border-2 border-red-400 text-red-700 font-semibold rounded-lg shadow-sm hover:bg-red-400 hover:text-white transition-all transform hover:scale-105"
+                    >
+                    Email
+                    </button>
               </div>
             </div>
 
