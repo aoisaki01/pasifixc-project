@@ -1,10 +1,9 @@
-// src/components/PortfolioSection.tsx
-'use client'; // This component is now interactive, so we mark it as a Client Component
+'use client'; 
 
 import { useState } from 'react';
 import Image from 'next/image';
 
-// --- VideoCard Component (Can be in the same file or separate) ---
+// --- VideoCard Component (Tidak ada perubahan) ---
 type VideoCardProps = {
   title: string;
   thumbnailUrl: string;
@@ -40,7 +39,6 @@ const VideoCard = ({ title, thumbnailUrl, videoUrl }: VideoCardProps) => {
 };
 
 // --- Main PortfolioSection Component ---
-// We pass the fetched videos as props now
 type Video = {
   id: string;
   title: string;
@@ -54,7 +52,8 @@ type PortfolioProps = {
 };
 
 const PortfolioSection = ({ editingMographVideos, commissionVideos }: PortfolioProps) => {
-  const [activeCategory, setActiveCategory] = useState('mograph');
+  // --- 1. UBAH STATE AWAL DI SINI ---
+  const [activeCategory, setActiveCategory] = useState('commission'); // Sebelumnya 'mograph'
 
   const categories = {
     mograph: editingMographVideos,
@@ -87,18 +86,8 @@ const PortfolioSection = ({ editingMographVideos, commissionVideos }: PortfolioP
           <div className="mt-6 h-1 w-24 bg-red-500 mx-auto rounded-full"></div>
         </div>
 
-        {/* --- Filter Buttons --- */}
+        {/* --- 2. TUKAR POSISI TOMBOL DI SINI --- */}
         <div className="flex justify-center gap-4 mb-12">
-          <button
-            onClick={() => setActiveCategory('mograph')}
-            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-              activeCategory === 'mograph'
-                ? 'bg-red-500 text-white shadow-lg'
-                : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/70'
-            }`}
-          >
-            Editing & Mograph
-          </button>
           <button
             onClick={() => setActiveCategory('commission')}
             className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
@@ -109,9 +98,18 @@ const PortfolioSection = ({ editingMographVideos, commissionVideos }: PortfolioP
           >
             Commission Works
           </button>
+          <button
+            onClick={() => setActiveCategory('mograph')}
+            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+              activeCategory === 'mograph'
+                ? 'bg-red-500 text-white shadow-lg'
+                : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/70'
+            }`}
+          >
+            Editing & Mograph
+          </button>
         </div>
 
-        {/* --- Video Grid --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
           {videosToShow.map((video, index) => (
             <div key={video.id} style={{ marginTop: index % 2 !== 0 ? '4rem' : '0' }}>
