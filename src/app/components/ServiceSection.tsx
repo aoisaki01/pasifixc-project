@@ -1,148 +1,140 @@
-// File: src/app/services/page.tsx
+'use client';
 
 import React from 'react';
-import { Film, Image as ImageIcon, Box, MessageSquare, ClipboardCheck, CreditCard, Sparkles, Code2, Music } from 'lucide-react';
-
+import { Palette, Wand2, Search, Mic, MessageSquare, ClipboardCheck, CreditCard, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Scissors } from "lucide-react";
+// ...existing code...
 const workflowSteps = [
-  { title: 'Chat Tim Kami', icon: MessageSquare },
-  { title: 'Konsultasi Kebutuhan', icon: ClipboardCheck },
-  { title: 'Proses Pembayaran', icon: CreditCard },
-  { title: 'Editing & Selesai', icon: Sparkles },
+  { title: 'Kontak & Brief Awal', description: 'Anda menghubungi tim kami dengan ide atau kebutuhan proyek Anda.', icon: MessageSquare },
+  { title: 'Diskusi & Konsultasi', description: 'Kami mendalami visi Anda, memberikan masukan, dan menyusun strategi eksekusi.', icon: ClipboardCheck },
+  { title: 'Proses Pembayaran', description: 'Setelah menyetujui proposal, proses administrasi diselesaikan untuk memulai proyek.', icon: CreditCard },
+  { title: 'Eksekusi & Review', description: 'Tim kami mulai bekerja. Anda akan menerima update dan memberikan feedback hingga hasil akhir tercapai.', icon: Sparkles },
+];
+
+const otherServices = [
+  { title: 'Produksi Audio', description: 'Jingle, BGM, scoring, dan sound design profesional.', icon: Mic },
+  { title: 'Desain Grafis', description: 'Identitas visual, poster, thumbnail, dan aset promosi.', icon: Palette },
+  { title: 'Creative Research', description: 'Riset konsep, referensi visual, dan pengembangan ide cerita.', icon: Search }
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center p-8 pt-28 overflow-hidden bg-white">
-      <section id="services" className="w-full max-w-6xl py-10 px-4">
-        
-        {/* --- BAGIAN 1: LAYANAN KAMI (PENGENALAN) --- */}
-        <div className="text-center">
-          <h2 className="font-heading py-6 text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-red-800 to-red-500 text-transparent bg-clip-text">
-            Layanan Profesional Kami
-          </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
-            Dari ide mentah hingga hasil akhir yang memukau, kami hadir untuk mengubah visi Anda menjadi kenyataan. Tim kami menangani berbagai kebutuhan multimedia dengan presisi dan kreativitas tinggi.
-          </p>
-        </div>
+    // Latar belakang utama kini putih polos
+    <main className="relative flex min-h-screen flex-col items-center overflow-x-hidden bg-white text-slate-800">
+      
+      {/* Elemen 'blob' dekoratif di latar belakang TELAH DIHAPUS */}
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="bg-red-50/50 p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-            <Film size={40} className="mx-auto mb-4 text-red-800" strokeWidth={2} />
-            <h3 className="text-2xl font-bold text-gray-800">Video Editing</h3>
-            <p className="mt-2 text-gray-600">
-              Mulai dari video YouTube, konten media sosial, iklan, hingga film pendek. Kami menangani color grading, audio mixing, motion graphics, dan penyempurnaan visual lainnya.
-            </p>
-          </div>
-          <div className="bg-red-50/50 p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-            <ImageIcon size={40} className="mx-auto mb-4 text-red-800" strokeWidth={2} />
-            <h3 className="text-2xl font-bold text-gray-800">Graphic Design</h3>
-            <p className="mt-2 text-gray-600">
-              Retouching foto produk, manipulasi kreatif, desain poster, hingga thumbnail yang menarik. Kami memastikan setiap piksel pada gambar Anda terlihat sempurna dan profesional.
-            </p>
-          </div>
-          <div className="bg-red-50/50 p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-            <Box size={40} className="mx-auto mb-4 text-red-800" strokeWidth={2} />
-            <h3 className="text-2xl font-bold text-gray-800">CGI & Efek Visual</h3>
-            <p className="mt-2 text-gray-600">
-              Menambahkan elemen yang tidak ada menjadi ada. Kami menangani tracking objek, green screen, penambahan aset 3D ringan, dan efek visual dasar untuk meningkatkan kualitas produksi Anda.
-            </p>
-          </div>
-        </div>
+      <div className="relative z-10 w-full">
+        {/* BAGIAN 1: PENGENALAN LAYANAN */}
+        <section id="services" className="w-full max-w-7xl mx-auto text-center pt-32 pb-20 px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            {/* Judul ini sudah menggunakan gradien */}
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter bg-gradient-to-r from-red-800 to-red-500 text-transparent bg-clip-text">
+              Partner Produksi Multimedia Anda
+            </h1>
+            <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+Kami adalah studio kreatif dengan layanan produksi multimedia. Kami akan berfungsi sebagai partner dan perpanjangan tangan tim Anda. Kami mengelola setiap detail teknis dan kreatif untuk memastikan tujuan Anda dieksekusi secara presisi dengan hasil yang maksimal.            </p>
+          </motion.div>
+        </section>
 
-        {/* --- BAGIAN 2: KEAHLIAN KAMI (PENJELASAN DETAIL) --- */}
-        <div id="why-us" className="mt-24">
-            <div className="text-center">
-                <h2 className="font-heading text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-red-800 to-red-500 text-transparent bg-clip-text">
-                Keahlian Kami
-                </h2>
-                <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
-                Kami adalah partner kreatif Anda, menggabungkan keahlian teknis di berbagai bidang untuk memastikan brand dan cerita Anda tampil maksimal di semua platform.
-                </p>
+        {/* BAGIAN 2: PENJABARAN PASCA-PRODUKSI */}
+        <section className="w-full py-24 px-6">
+          <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+            <div className="lg:col-span-1">
+              {/* Teks diubah menjadi gradien merah */}
+              <h2 className="text-3xl font-bold sticky top-24 bg-gradient-to-r from-red-800 to-red-500 text-transparent bg-clip-text">
+                Seni Pasca-Produksi
+              </h2>
+              <p className="mt-4 text-gray-600">
+                Di sinilah keajaiban terjadi. Kami memoles materi mentah Anda menjadi sebuah karya yang utuh, emosional, dan berdampak melalui tiga pilar utama:
+              </p>
             </div>
-
-            {/* Pemisah Layanan dengan tata letak di tengah */}
-            <div className="mt-16 space-y-20">
-
-              {/* Layanan 1: Multimedia */}
-              <div className="flex flex-col items-center text-center gap-6">
-                <Film size={80} className="text-red-500" strokeWidth={1.5} />
-                <div className="max-w-2xl">
-                  <h3 className="text-3xl font-bold text-gray-800">Multimedia & Pasca-Produksi</h3>
-                  <p className="mt-4 text-gray-600">
-                    Keahlian kami mencakup spektrum luas, mulai dari konten cepat untuk platform modern hingga proyek sinematik yang kompleks. Kami memastikan setiap frame bercerita.
-                  </p>
-                  <ul className="mt-4 space-y-2 text-gray-600 inline-block text-left">
-                    <li className="flex items-start"><strong className="text-red-600 w-6 text-center mr-2">✓</strong> Editing video untuk <strong>&nbsp;YouTube, TikTok, AMV, dan GMV&nbsp;</strong>.</li>
-                    <li className="flex items-start"><strong className="text-red-600 w-6 text-center mr-2">✓</strong> Layanan pasca-produksi untuk <strong>&nbsp;Short Film&nbsp;</strong> berkualitas *production house*.</li>
-                    <li className="flex items-start"><strong className="text-red-600 w-6 text-center mr-2">✓</strong> Desain grafis dan manipulasi gambar profesional.</li>
-                  </ul>
+            
+            <div className="lg:col-span-2 space-y-10">
+              {/* ... (Konten pilar pasca-produksi tidak diubah) ... */}
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-500 to-red-800 text-white rounded-lg flex items-center justify-center shadow-lg shadow-red-500/20">
+                  <Scissors size={28} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-slate-800">Video Editing</h3>
+                  <p className="mt-2 text-gray-600">Dari pemotongan pertama hingga polesan akhir, kami menyusun narasi visual Anda. Proses kami mencakup: <strong className="text-red-800">assembly</strong>, <strong className="text-red-800">rough cut</strong>, <strong className="text-red-800">fine cut</strong>, hingga <strong className="text-red-800">final delivery</strong>.</p>
                 </div>
               </div>
-
-              {/* Layanan 2: Web Development */}
-              <div className="flex flex-col items-center text-center gap-6">
-                <Code2 size={80} className="text-red-500" strokeWidth={1.5} />
-                <div className="max-w-2xl">
-                  <h3 className="text-3xl font-bold text-gray-800">Pengembangan Website</h3>
-                  <p className="mt-4 text-gray-600">
-                    Hadirkan identitas Anda di dunia digital dengan website yang modern, cepat, dan fungsional. Kami membangun solusi digital dari nol sesuai kebutuhan Anda.
-                  </p>
-                  <ul className="mt-4 space-y-2 text-gray-600 inline-block text-left">
-                    <li className="flex items-start"><strong className="text-red-600 w-6 text-center mr-2">✓</strong> Website &nbsp; <strong>profil perusahaan (company profile)</strong>.</li>
-                    <li className="flex items-start"><strong className="text-red-600 w-6 text-center mr-2">✓</strong> Halaman landas &nbsp; <strong>(landing page) &nbsp;</strong> yang dioptimalkan.</li>
-                    <li className="flex items-start"><strong className="text-red-600 w-6 text-center mr-2">✓</strong> Portofolio &nbsp; <strong>personal &nbsp;</strong> yang stylish.</li>
-                  </ul>
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-500 to-red-800 text-white rounded-lg flex items-center justify-center shadow-lg shadow-red-500/20">
+                  <Palette size={28} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-slate-800">Color Grading & Finishing</h3>
+                  <p className="mt-2 text-gray-600">Kami membentuk mood dan atmosfer visual film atau video Anda. Termasuk <strong className="text-red-800">koreksi warna primer & sekunder</strong>, <strong className="text-red-800">shot matching</strong>, dan <strong className="text-red-800">look development</strong> untuk mencapai estetika sinematik.</p>
                 </div>
               </div>
-
-              {/* Layanan 3: Audio Production */}
-              <div className="flex flex-col items-center text-center gap-6">
-                <Music size={80} className="text-red-500" strokeWidth={1.5} />
-                <div className="max-w-2xl">
-                  <h3 className="text-3xl font-bold text-gray-800">Produksi Audio & Musik</h3>
-                  <p className="mt-4 text-gray-600">
-                    Suara adalah separuh dari cerita. Kami menyempurnakan aspek audio proyek Anda agar lebih hidup, emosional, dan berdampak.
-                  </p>
-                  <ul className="mt-4 space-y-2 text-gray-600 inline-block text-left">
-                    <li className="flex items-start"><strong className="text-red-600 w-6 text-center mr-2">✓</strong> Pembuatan <strong>&nbsp;jingle&nbsp;</strong> dan musik latar <strong>(BGM)</strong> original.</li>
-                    <li className="flex items-start"><strong className="text-red-600 w-6 text-center mr-2">✓</strong> <strong>&nbsp;Scoring&nbsp;</strong> atau penataan musik untuk film dan video.</li>
-                    <li className="flex items-start"><strong className="text-red-600 w-6 text-center mr-2">✓</strong> <strong>&nbsp;Sound design&nbsp;</strong>, mixing, dan mastering profesional.</li>
-                  </ul>
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-500 to-red-800 text-white rounded-lg flex items-center justify-center shadow-lg shadow-red-500/20">
+                  <Wand2 size={28} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-slate-800">Efek Visual (VFX)</h3>
+                  <p className="mt-2 text-gray-600">Menambahkan elemen yang mustahil untuk meningkatkan skala produksi. Layanan kami meliputi <strong className="text-red-800">compositing</strong>, <strong className="text-red-800">motion tracking</strong>, <strong className="text-red-800">keying (green screen)</strong>, dan integrasi aset digital.</p>
                 </div>
               </div>
-
             </div>
-        </div>
+          </div>
+        </section>
 
-        {/* --- BAGIAN 3: ALUR KERJA --- */}
-        <div className="mt-24 text-center">
-            <h3 className="font-heading text-3xl md:text-4xl font-bold text-gray-800">
-              Alur Kerja yang Simpel & Efisien
-            </h3>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-              Kami percaya pada proses yang transparan dan mudah. Hanya dalam 4 langkah, proyek Anda akan selesai.
-            </p>
-            <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 w-full max-w-4xl mx-auto">
+        {/* BAGIAN 3: ALUR KERJA */}
+        {/* Latar belakang abu-abu (bg-slate-50) DIHAPUS agar putih polos */}
+        <section className="w-full py-24 px-6 border-t border-b border-slate-100">
+          <div className="w-full max-w-7xl mx-auto text-center">
+            {/* Teks diubah menjadi gradien merah */}
+            <h2 className="text-4xl font-extrabold bg-gradient-to-r from-red-800 to-red-500 text-transparent bg-clip-text">
+              Proses Kerja Kami
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Empat langkah transparan untuk membawa ide Anda dari konsep menjadi kenyataan.</p>
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* ... (Konten alur kerja tidak diubah) ... */}
               {workflowSteps.map((step, index) => {
                 const IconComponent = step.icon;
                 return (
-                  <React.Fragment key={index}>
-                    <div className="flex flex-col items-center text-center">
-                      <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-red-800 to-red-500 rounded-full shadow-md">
-                        <IconComponent className="text-white" size={40} strokeWidth={2.5} />
-                      </div>
-                      <p className="mt-3 font-semibold text-gray-700">{step.title}</p>
+                  <div key={index} className="flex flex-col items-center text-center p-6 bg-white rounded-xl border border-red-100 shadow-sm hover:shadow-xl hover:shadow-red-200/50 hover:-translate-y-2 transition-all duration-300">
+                    <div className="relative mb-4 bg-gradient-to-br from-red-500 to-red-800 text-white p-4 rounded-full">
+                      <IconComponent size={32} />
                     </div>
-                    {index < workflowSteps.length - 1 && (
-                      <div className="w-full md:w-1/4 h-1 md:h-auto border-t-2 md:border-t-0 md:border-l-2 border-dashed border-gray-300 mx-4 my-4 md:my-0"></div>
-                    )}
-                  </React.Fragment>
+                    <h3 className="mt-2 text-xl font-bold text-slate-800">{step.title}</h3>
+                    <p className="mt-2 text-sm text-gray-600 flex-grow">{step.description}</p>
+                  </div>
                 );
               })}
             </div>
-        </div>
-
-      </section>
+          </div>
+        </section>
+        
+        {/* BAGIAN 4: LAYANAN LAINNYA */}
+        <section className="w-full py-24 px-6">
+          <div className="w-full max-w-7xl mx-auto text-center">
+            {/* Teks diubah menjadi gradien merah */}
+            <h2 className="text-4xl font-extrabold bg-gradient-to-r from-red-800 to-red-500 text-transparent bg-clip-text">
+              Jangkauan Kreatif Lainnya
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Selain fokus utama kami, keahlian tim kami juga mencakup spektrum kreatif lainnya.</p>
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* ... (Konten layanan lainnya tidak diubah) ... */}
+              {otherServices.map((service, index) => {
+                const IconComponent = service.icon;
+                return (
+                  <div key={index} className="p-8 bg-white border border-slate-100 rounded-lg text-left shadow-sm hover:shadow-md hover:border-red-100 transition-all duration-300">
+                    <IconComponent className="h-10 w-10 text-red-600 mb-4" />
+                    <h3 className="text-2xl font-bold">{service.title}</h3>
+                    <p className="mt-2 text-slate-500">{service.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
