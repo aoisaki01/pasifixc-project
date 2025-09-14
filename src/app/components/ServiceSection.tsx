@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Palette, Wand2, Search, Mic, MessageSquare, ClipboardCheck, CreditCard, Sparkles } from 'lucide-react';
+import {Palette, Wand2, Search, Mic, MessageSquare, ClipboardCheck, CreditCard, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Scissors } from "lucide-react";
 // ...existing code...
@@ -44,10 +44,10 @@ Kami adalah studio kreatif dengan layanan produksi multimedia. Kami akan berfung
             <div className="lg:col-span-1">
               {/* Teks diubah menjadi gradien merah */}
               <h2 className="text-3xl font-bold sticky top-24 bg-gradient-to-r from-red-800 to-red-500 text-transparent bg-clip-text">
-                Seni Pasca-Produksi
+                Post Production
               </h2>
               <p className="mt-4 text-gray-600">
-                Di sinilah keajaiban terjadi. Kami memoles materi mentah Anda menjadi sebuah karya yang utuh, emosional, dan berdampak melalui tiga pilar utama:
+                Layanan utama kami berfokus pada pasca-produksi video dan film. Kami mengelola setiap aspek teknis dan kreatif untuk memastikan visi Anda terwujud dengan hasil yang memukau.
               </p>
             </div>
             
