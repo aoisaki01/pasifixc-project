@@ -1,0 +1,105 @@
+{
+  "motionGraphic": [
+    {
+      "id": "mg1",
+      "title": "UCH logo Animation",
+      "publicId": "Comp_1_ulxfx0",
+      "posterOffset": 2
+    },
+    {
+      "id": "mg2",
+      "title": "Idul Fitri Greeting Animation",
+      "publicId": "with_sound_poduc5",
+      "posterOffset": 9
+    },
+    {
+      "id": "mg3",
+      "title": "UI Animation Showcase",
+      "publicId": "Comp_1_kquaxy",
+      "posterOffset": 3
+    },
+    {
+      "id": "mg4",
+      "title": "Mograph Portofolio Reel",
+      "publicId": "Mograph_Portofolio_djwt7m",
+      "posterOffset": 3
+    },
+     {
+      "id": "soc3",
+      "title": "Mograph Music Video",
+      "publicId": "ssvid.app--mograph-portofolio_360p_xjdjfv",
+      "posterOffset": 1 
+    }
+  ],
+  "socials": [
+    {
+      "id": "soc1",
+      "title": "Closing Revalue Edit",
+      "publicId": "Closing_Revalue_lr7kzg",
+      "posterOffset": 4
+
+    },
+    {
+      "id": "soc7",
+      "title": "Content Editing rayhanlife",
+      "publicId": "ssvid.app--content-eediting-rayhanlife_360p_sdnldk",
+            "posterUrl" : "https://res.cloudinary.com/dl2ijoilh/image/upload/v1759425935/image_2025-10-03_002531666_mhafqy.png"
+
+
+    },
+    {
+      "id": "soc6",
+      "title": "Content Editing Agboy Cerita",
+      "publicId": "ssvid.app--AGBOY-CERITA_1080p_ssn41y",
+            "posterUrl" : "https://res.cloudinary.com/dl2ijoilh/image/upload/v1759426203/image_2025-10-03_002959656_hxk4lv.png"
+
+
+    },
+    {
+      "id": "soc2",
+      "title": "Hak Kekayaan Intelektual",
+      "publicId": "Hak_Kekayaan_Intelektual_dm7isa",
+       "posterOffset": 3
+    }
+    
+   
+  ],
+  "ads": [
+    {
+      "id": "ad1",
+      "title": "Willie Salim Academy Video",
+      "publicId": "willie_salim_module_k8lije",
+      "posterOffset": 1
+    },
+    {
+      "id": "ad3",
+      "title": "Whitematic Video Promotion",
+      "publicId": "Pre_comp_6_-_bukan_clawsie_1080p_h264_ggvknt",
+            "posterUrl" : "https://res.cloudinary.com/dl2ijoilh/image/upload/v1759425527/image_2025-10-03_001816769_waifu2x_photo_noise3_scale_jbgias.png"
+
+    },
+    {
+      "id": "ad2",
+      "title": "Kopi Seribu Willie Salim",
+      "publicId": "ssstik.io__williesalim_1759423818810_zjaz1n",
+      "posterUrl" : "https://res.cloudinary.com/dl2ijoilh/image/upload/v1759424508/image_2025-10-02_235428738_waifu2x_photo_noise3_scale_v34gr5.png"
+    }
+  ],
+  "corporate": [
+    {
+      "id": "corp1",
+      "title": "BCA Company Edit",
+      "publicId": "company_project_iwbtbg",
+      "posterOffset": 2
+    },
+    {
+      "id": "corp2",
+      "title": "Animasi BTN",
+      "publicId": "Animasi_BTN_guqr36",
+      "posterOffset": 31
+    }
+  ],
+  "others": [
+    
+  ]
+}
