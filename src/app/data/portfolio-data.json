@@ -72,21 +72,19 @@
       "posterOffset": 1
     },
     {
-      "id": "ad3",
+      "id": "ad2",
       "title": "Whitematic Video Promotion",
       "publicId": "Pre_comp_6_-_bukan_clawsie_1080p_h264_ggvknt",
             "posterUrl" : "https://res.cloudinary.com/dl2ijoilh/image/upload/v1759425527/image_2025-10-03_001816769_waifu2x_photo_noise3_scale_jbgias.png"
-
+    },
+    {
+      "id": "ad3",
+      "title": "Nivea Video Promotion",
+      "publicId": "nivea_didxyn",
+      "posterOffset": 1
     },
     {
       "id": "ad4",
-      "title": "Nivea Video Promotion",
-      "publicId": "nivea_didxyn"
-            
-
-    },
-    {
-      "id": "ad2",
       "title": "Kopi Seribu Willie Salim",
       "publicId": "ssstik.io__williesalim_1759423818810_zjaz1n",
       "posterUrl" : "https://res.cloudinary.com/dl2ijoilh/image/upload/v1759424508/image_2025-10-02_235428738_waifu2x_photo_noise3_scale_v34gr5.png"
@@ -111,5 +109,6 @@
   ]
 
 }
+
 
 
