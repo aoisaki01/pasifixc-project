@@ -73,7 +73,7 @@
     },
     {
       "id": "ad2",
-      "title": "nivea_didxyn",
+      "title": "Whitematic video promotion",
       "publicId": "Pre_comp_6_-_bukan_clawsie_1080p_h264_ggvknt",
             "posterUrl" : "https://res.cloudinary.com/dl2ijoilh/image/upload/v1759425527/image_2025-10-03_001816769_waifu2x_photo_noise3_scale_jbgias.png"
     },
@@ -83,6 +83,11 @@
       "publicId": "nivea_didxyn",
       "posterOffset": 1
     },
+       {
+      "id": "ad4",
+      "title": "Toriyu Mineral Water Video Promotion",
+      "publicId": "tidak_disponsori_toriyu_lwctpk",
+      "
     {
       "id": "ad4",
       "title": "Kopi Seribu Willie Salim",
@@ -109,6 +114,7 @@
   ]
 
 }
+
 
 
 
