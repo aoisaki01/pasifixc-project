@@ -2,8 +2,8 @@
   "motionGraphic": [
     {
       "id": "mg1",
-      "title": "UCH logo Animation",
-      "publicId": "Comp_1_ulxfx0",
+      "title": "Trail Animation",
+      "publicId": "KONTEN_-_ORB_TRAIL_jkhch5",
       "posterOffset": 2
     },
     {
@@ -20,8 +20,8 @@
     },
     {
       "id": "mg4",
-      "title": "Mograph Portofolio Reel",
-      "publicId": "Mograph_Portofolio_djwt7m",
+      "title": "Strategized Animation",
+      "publicId": "reels_konten_1_woytm5",
       "posterOffset": 3
     },
      {
@@ -138,6 +138,7 @@
   ]
 
 }
+
 
 
 
