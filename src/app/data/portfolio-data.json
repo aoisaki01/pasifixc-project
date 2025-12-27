@@ -25,10 +25,34 @@
       "posterOffset": 3
     },
      {
-      "id": "soc3",
+      "id": "mg5",
       "title": "Mograph Music Video",
       "publicId": "ssvid.app--mograph-portofolio_360p_xjdjfv",
       "posterOffset": 1 
+    },
+     {
+      "id": "mg6",
+      "title": "Business platform",
+      "publicId": "nfbrgt4mbu3krsyzdd4q",
+      "posterOffset": 1 
+    },
+     {
+      "id": "mg7",
+      "title": "Christmas Greeting",
+      "publicId": "yuxdbvnmknuqyn1mmm1r",
+      "posterOffset": 1 
+    },
+     {
+      "id": "mg9",
+      "title": "Bouncung Effect Animation",
+      "publicId": "bouncing_otlr40",
+      "posterOffset": 1 
+    },
+    {
+      "id": "mg8",
+      "title": "Instagram Animation",
+      "publicId": "instagram_pc0p9x",
+      "posterOffset": 2
     }
   ],
   "socials": [
@@ -114,6 +138,7 @@
   ]
 
 }
+
 
 
 
