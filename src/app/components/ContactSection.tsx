@@ -66,7 +66,7 @@ const ContactSection = () => {
                     Discord
                     </button>
                     <button 
-                    onClick={() => openModal('https://wa.me/6282184774837')} 
+                    onClick={() => openModal('https://wa.me/6281296305532')} 
                     className="flex items-center justify-center gap-3 w-full px-6 py-3 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:shadow-red-500/50 transition-all transform hover:scale-105"
                     >
                     WhatsApp
