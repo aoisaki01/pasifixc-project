@@ -1,14 +1,14 @@
-'use client'; 
+'use client';
 
 import { useState } from 'react';
 
-// --- Tipe Data (Diperbarui) ---
+// --- Data Types (Updated) ---
 type Video = {
   id: string;
   title: string;
   publicId: string;
   posterOffset?: number;
-  posterUrl?: string; // Properti baru untuk poster kustom
+  posterUrl?: string; // New property for custom poster
 };
 
 export type PortfolioData = {
@@ -23,22 +23,22 @@ type PortfolioProps = {
   videos: PortfolioData;
 };
 
-// --- Komponen VideoCard (Diperbarui) ---
+// --- VideoCard Component (Updated) ---
 const VideoCard = ({ title, publicId, posterOffset, posterUrl }: Video) => {
-  // Bangun URL dasar
+  // Build base URL
   let videoEmbedUrl = `https://player.cloudinary.com/embed/?cloud_name=dl2ijoilh&public_id=${publicId}&profile=cld-default`;
 
-  // Logika untuk menambahkan poster:
-  // 1. Prioritaskan posterUrl kustom jika ada.
+  // Logic to add poster:
+  // 1. Prioritize custom posterUrl if available.
   if (posterUrl) {
-    // URL untuk poster harus di-encode agar aman digunakan sebagai parameter
+    // Encode URL for safe parameter usage
     videoEmbedUrl += `&poster=${encodeURIComponent(posterUrl)}`;
-  } 
-  // 2. Jika tidak ada, gunakan posterOffset.
+  }
+  // 2. If not, use posterOffset.
   else if (posterOffset) {
     videoEmbedUrl += `&poster_options[transformation][start_offset]=${posterOffset}`;
   }
-  
+
   return (
     <div className="group block transition-transform duration-300 ease-in-out hover:-translate-y-2">
       <div className="relative w-full aspect-video overflow-hidden rounded-lg shadow-2xl shadow-black/50 ring-1 ring-white/10 group-hover:ring-red-500 transition-all duration-300">
@@ -47,7 +47,7 @@ const VideoCard = ({ title, publicId, posterOffset, posterUrl }: Video) => {
           style={{ height: '100%', width: '100%', aspectRatio: '16 / 9' }}
           allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
           allowFullScreen
-          frameBorder="0"
+          // frameBorder is deprecated, so we remove it
           className="w-full h-full"
           title={title}
         ></iframe>
@@ -59,26 +59,35 @@ const VideoCard = ({ title, publicId, posterOffset, posterUrl }: Video) => {
   );
 };
 
-// --- Tombol Kategori (Diperbarui) ---
-const CategoryButton = ({ label, categoryKey, activeCategory, onClick }: { label: string; categoryKey: string; activeCategory: string; onClick: () => void; }) => {
-    const isActive = activeCategory === categoryKey;
-    
-    return (
-        <button
-            onClick={onClick}
-            className={`px-6 py-2.5 text-sm rounded-full font-bold transition-all duration-300 ${
-                isActive
-                ? 'bg-red-500 text-white shadow-lg'
-                : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/70'
-            }`}
-        >
-            {label}
-        </button>
-    );
+// --- Category Button (Updated) ---
+const CategoryButton = ({
+  label,
+  categoryKey,
+  activeCategory,
+  onClick,
+}: {
+  label: string;
+  categoryKey: string;
+  activeCategory: string;
+  onClick: () => void;
+}) => {
+  const isActive = activeCategory === categoryKey;
+
+  return (
+    <button
+      onClick={onClick}
+      className={`px-6 py-2.5 text-sm rounded-full font-bold transition-all duration-300 ${
+        isActive
+          ? 'bg-red-500 text-white shadow-lg'
+          : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/70'
+      }`}
+    >
+      {label}
+    </button>
+  );
 };
 
-
-// --- Komponen Utama PortfolioSection ---
+// --- Main PortfolioSection Component ---
 const PortfolioSection = ({ videos }: PortfolioProps) => {
   const [activeCategory, setActiveCategory] = useState('motionGraphic');
 
@@ -87,51 +96,50 @@ const PortfolioSection = ({ videos }: PortfolioProps) => {
     { key: 'socials', label: 'Socials' },
     { key: 'ads', label: 'Ads' },
     { key: 'corporate', label: 'Corporate' },
-    { key: 'others', label: 'Others' }
+    { key: 'others', label: 'Others' },
   ];
-  
+
   const videosToShow = videos[activeCategory as keyof PortfolioData] || [];
 
   return (
     <section id="portfolio" className="relative w-full text-white flex items-center py-24 overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-black/70 -z-20" 
-        style={{ 
-          backgroundImage: "url('/images/red.jpg')", 
-          backgroundSize: 'cover', 
+      <div
+        className="absolute inset-0 bg-black/70 -z-20"
+        style={{
+          backgroundImage: "url('/images/red.jpg')",
+          backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'blur(4px)' // Menambahkan blur pada background
+          filter: 'blur(4px)', // Add blur to background
         }}
       />
       <div className="absolute inset-0 bg-black/70 -z-10" />
 
-
       <div className="relative w-full max-w-7xl mx-auto px-6 md:px-12 z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-             <span className="text-red-400">Our Portfolio</span>
+            <span className="text-red-400">Our Portfolio</span>
           </h2>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
-            Kumpulan karya terbaru kami dalam berbagai bidang kreatif.
+            A collection of our latest works in various creative fields.
           </p>
           <div className="mt-6 h-1 w-24 bg-red-500 mx-auto rounded-full"></div>
         </div>
 
-        {/* Tombol Kategori (Diperbarui) */}
+        {/* Category Buttons (Updated) */}
         <div className="flex justify-center flex-wrap gap-3 mb-12">
-            {categories.map(cat => (
-                <CategoryButton 
-                    key={cat.key}
-                    label={cat.label}
-                    categoryKey={cat.key}
-                    activeCategory={activeCategory}
-                    onClick={() => setActiveCategory(cat.key)}
-                />
-            ))}
+          {categories.map((cat) => (
+            <CategoryButton
+              key={cat.key}
+              label={cat.label}
+              categoryKey={cat.key}
+              activeCategory={activeCategory}
+              onClick={() => setActiveCategory(cat.key)}
+            />
+          ))}
         </div>
 
-        {/* Grid Video */}
+        {/* Video Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
           {videosToShow.length > 0 ? (
             videosToShow.map((video, index) => (
@@ -146,7 +154,9 @@ const PortfolioSection = ({ videos }: PortfolioProps) => {
               </div>
             ))
           ) : (
-            <p className="md:col-span-2 text-center text-gray-400">Tidak ada video untuk kategori ini.</p>
+            <p className="md:col-span-2 text-center text-gray-400">
+              No videos available for this category.
+            </p>
           )}
         </div>
       </div>
@@ -155,4 +165,3 @@ const PortfolioSection = ({ videos }: PortfolioProps) => {
 };
 
 export default PortfolioSection;
-

@@ -1,5 +1,5 @@
 // File: src/components/GraphicDesignSection.tsx
-'use client'; // Komponen ini interaktif, jadi harus 'use client'
+'use client';
 
 import React, { useCallback } from 'react';
 import Image from 'next/image';
@@ -7,7 +7,6 @@ import Link from 'next/link';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Terima nama file gambar sebagai props dari halaman utama
 type GraphicDesignSectionProps = {
   images: string[];
 };
@@ -31,13 +30,13 @@ const GraphicDesignSection = ({ images }: GraphicDesignSectionProps) => {
             Graphic Design Portfolio
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Geser untuk melihat kumpulan karya desain grafis, manipulasi gambar, dan materi branding yang pernah kami kerjakan.
+            Swipe to see our collection of graphic design works, image manipulations, and branding materials we have created.
           </p>
         </div>
 
         {images.length > 0 ? (
           <div className="relative flex items-center justify-center">
-            {/* Tombol Back */}
+            {/* Back Button */}
             <button
               onClick={scrollPrev}
               className="absolute left-0 z-10 p-2 bg-white/50 rounded-full shadow-md hover:bg-white transition-all duration-200"
@@ -59,7 +58,7 @@ const GraphicDesignSection = ({ images }: GraphicDesignSectionProps) => {
                     >
                       <Image
                         src={`/graphdesign/${imageFile}`}
-                        alt={imageFile.split('.')[0]} // Menggunakan nama file sebagai alt text
+                        alt={imageFile.split('.')[0]}
                         fill
                         className="object-contain transition-transform duration-500 ease-in-out group-hover:scale-105"
                       />
@@ -69,7 +68,7 @@ const GraphicDesignSection = ({ images }: GraphicDesignSectionProps) => {
               </div>
             </div>
 
-            {/* Tombol Next */}
+            {/* Next Button */}
             <button
               onClick={scrollNext}
               className="absolute right-0 z-10 p-2 bg-white/50 rounded-full shadow-md hover:bg-white transition-all duration-200"
@@ -79,7 +78,7 @@ const GraphicDesignSection = ({ images }: GraphicDesignSectionProps) => {
             </button>
           </div>
         ) : (
-          <p className="text-center text-gray-500">Tidak ada gambar portofolio untuk ditampilkan saat ini.</p>
+          <p className="text-center text-gray-500">No portfolio images to display at the moment.</p>
         )}
       </div>
     </section>

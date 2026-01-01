@@ -1,34 +1,34 @@
 // File: src/components/FaqSection.tsx
-'use client'; // Komponen ini interaktif (bisa diklik), jadi harus 'use client'
+'use client';
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-// --- Daftar Pertanyaan & Jawaban ---
+// --- FAQ Data (English) ---
 const faqData = [
   {
-    question: 'Berapa lama proses pengerjaan satu proyek video?',
-    answer: 'Waktu pengerjaan sangat bervariasi tergantung kompleksitas. Untuk video TikTok atau Reels biasanya 1-3 hari, sementara untuk short film atau video yang lebih kompleks bisa memakan waktu 1-2 minggu setelah semua materi kami terima.'
+    question: 'How long does it take to complete a video project?',
+    answer: 'The timeline varies depending on complexity. TikTok or Reels videos usually take 1-3 days, while short films or more complex videos may take 1-2 weeks after we receive all materials.'
   },
   {
-    question: 'Bagaimana sistem pembayarannya?',
-    answer: 'Kami menerapkan sistem pembayaran 50% di awal sebagai tanda jadi (down payment), dan 50% sisanya setelah proyek selesai dan disetujui oleh Anda sebelum kami mengirimkan file final tanpa watermark.'
+    question: 'How does the payment system work?',
+    answer: 'We require a 50% down payment upfront, and the remaining 50% after the project is completed and approved by you, before we deliver the final watermark-free file.'
   },
   {
-    question: 'Apakah saya bisa meminta revisi?',
-    answer: 'Tentu saja. Setiap paket layanan kami sudah termasuk 2 kali revisi minor (seperti perubahan teks atau pemotongan klip). Revisi besar di luar konsep awal akan dikenakan biaya tambahan yang akan kita diskusikan terlebih dahulu.'
+    question: 'Can I request revisions?',
+    answer: 'Absolutely. Every service package includes 2 minor revisions (such as text changes or clip trimming). Major revisions outside the initial concept will incur additional charges, which we will discuss beforehand.'
   },
   {
-    question: 'Materi apa saja yang perlu saya siapkan?',
-    answer: 'Untuk kelancaran proses, Anda perlu menyiapkan semua materi mentah (footage video, gambar, musik jika ada), brief atau konsep yang jelas, serta referensi gaya yang Anda inginkan.'
+    question: 'What materials do I need to prepare?',
+    answer: 'To ensure a smooth process, please prepare all raw materials (video footage, images, music if any), a clear brief or concept, and style references you want.'
   },
   {
-    question: 'Apakah Pasifixc juga melayani pembuatan website dari nol?',
-    answer: 'Betul sekali. Selain layanan multimedia, kami juga menyediakan jasa pengembangan website lengkap, mulai dari desain, coding, hingga deployment untuk profil perusahaan, landing page, dan portofolio personal.'
+    question: 'Does Pasifixc also offer website development from scratch?',
+    answer: 'Yes, we do. In addition to multimedia services, we provide complete website development, from design and coding to deployment for company profiles, landing pages, and personal portfolios.'
   }
 ];
 
-// --- Komponen untuk satu item FAQ ---
+// --- Single FAQ Item Component ---
 interface FaqItemProps {
   item: {
     question: string;
@@ -61,8 +61,7 @@ const FaqItem = ({ item, isOpen, onClick }: FaqItemProps) => {
   );
 };
 
-
-// --- Komponen Utama FaqSection ---
+// --- Main FaqSection Component ---
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -78,7 +77,7 @@ const FaqSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Menemukan jawaban untuk pertanyaan yang paling sering diajukan tentang layanan dan proses kerja kami.
+            Find answers to the most common questions about our services and workflow.
           </p>
         </div>
         
